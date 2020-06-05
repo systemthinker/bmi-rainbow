@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {Form, Button} from "react-bootstrap"
+import {Form, Button, Alert} from "react-bootstrap"
 
 function App() {
 
+  const [showAlert, setShowAlert] = useState(false);
+  const [ message, set_message ] = useState();
+  const [ weightgroup, set_weightgroup ] = useState();
 
+ 
 
 
   const handleSubmit = (event) => {
@@ -20,18 +24,22 @@ function App() {
     const height = event.target.elements.formBasicHeight.value;
 
     const bmi = weight / Math.pow(height / 100, 2);
-      function messageBmi(bmi) {
-        if (bmi < 18.5) {
+    function messageBmi(bmi) {
+      if (bmi < 18.5) {
+          set_weightgroup('underweight');
           return "You're Underweight";
-        } else if (bmi > 18.5 && bmi < 24.9) {
+      } else if (bmi > 18.5 && bmi < 24.9) {
+          set_weightgroup('normal');
           return "You're Healthy";
-        } else if (bmi > 25 && bmi < 29.9) {
+      } else if (bmi > 25 && bmi < 29.9) {
+          set_weightgroup('overweight');
           return "You're overweight";
-        } else {
-          return "You are obese.";
-        }
+      } else {
+          return 'You are obese.';
       }
-    alert(messageBmi(bmi));
+  }
+
+  set_message(messageBmi(bmi));
 
   };
 
@@ -46,8 +54,9 @@ function App() {
         return "You are obese.";
       }
     }
-
+    
   return (
+    <div>
     <div className="App container">
       
       <Form className="Form" onSubmit={handleSubmit}>
@@ -65,7 +74,15 @@ function App() {
     Calculate BMI
   </Button>
 </Form>
+
+   
     </div>
+
+<div className="container message">
+<span className={`wg_${weightgroup} `}>{message}</span>
+</div>
+
+</div>
   );
 }
 

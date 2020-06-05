@@ -23,6 +23,36 @@ body {
   text-align: center;
 }
 
+.wg_underweight {
+  font-size: 1rem;
+  font-weight: 100;
+  letter-spacing: -1px;
+}
+
+.wg_normal {
+  font-size: 2rem;
+  font-weight: 400;
+  color: green;
+}
+
+.wg_overweight {
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+.wg_obese {
+  font-size: 6rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+
+.message {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 100px;
+  color: rgb(243, 13, 212)
+}
+
 button {
   background-color: green;
   font-size: 30;
@@ -52,7 +82,7 @@ input {
   }
 }
 
-np
+
 
 .App-header {
   background-color: #282c34;
@@ -67,6 +97,7 @@ np
 
 .App-link {
   color: #61dafb;
+  
 }
 
 @keyframes App-logo-spin {
