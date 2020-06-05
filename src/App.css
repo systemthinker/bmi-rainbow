@@ -1,5 +1,11 @@
+body {
+  background-image: url("https://image.freepik.com/free-vector/cute-unicorn-vector-sit-down-cloud_70350-79.jpg");
+  background-color: #cccccc;
+ }
+
 .App {
   text-align: center;
+  margin-top: 100px
 }
 
 .App-logo {
@@ -7,11 +13,46 @@
   pointer-events: none;
 }
 
+.Form {
+  height: 100px;
+  width: 600px;
+  margin: 0 auto;
+  font-size: 24px;
+  background-color: rgba(248, 161, 237, 0.8);
+  border: 1px solid black;
+  text-align: center;
+}
+
+button {
+  background-color: green;
+  font-size: 30;
+  height: 35px;
+  width: 600px;
+  color: white;
+  border: 1px solid green;
+  border-radius: 10px;
+  
+
+}
+
+button:hover {
+  background-color: rgb(226, 15, 233); 
+  border: 1px solid rgb(226, 15, 233);
+}
+
+input {
+  font-size: 24px;
+  margin: 10px;
+
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+np
 
 .App-header {
   background-color: #282c34;
